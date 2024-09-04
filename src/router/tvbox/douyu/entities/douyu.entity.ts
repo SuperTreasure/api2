@@ -27,4 +27,21 @@ export class Douyu extends Utils {
 
     return data;
   }
+
+  async search(
+    keyword: string,
+    page: number,
+    pageSize: number,
+    filterType: number,
+  ) {
+    const url = `https://www.douyu.com/japi/search/api/searchUser?kw=${keyword}&page=${page}&pageSize=${pageSize}&filterType=${filterType}`;
+
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: this.Headers,
+    });
+    const data = await response.json();
+
+    return data;
+  }
 }
