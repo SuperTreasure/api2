@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { DouyuModule } from './douyu/douyu.module';
 
-@Module({})
+@Module({
+  imports: [DouyuModule]
+})
 export class TvboxModule {}
