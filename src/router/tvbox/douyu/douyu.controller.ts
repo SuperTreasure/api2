@@ -4,6 +4,7 @@ import {
   Query,
   HttpException,
   HttpStatus,
+  Param,
 } from '@nestjs/common';
 import { DouyuService } from './douyu.service';
 import { DirectoryMixListDouyuDto } from './dto/directoryMixList-douyu.dto';
@@ -50,5 +51,10 @@ export class DouyuController {
       pageSize,
       filterType,
     );
+  }
+
+  @Get('betard/:rid')
+  async betard(@Param('rid') rid: string) {
+    return await this.douyuService.betard(rid);
   }
 }

@@ -36,4 +36,12 @@ export class DouyuService {
   ) {
     return await douyu.search(keyword, page, pageSize, filterType);
   }
+
+  /**
+   * 获取直播间信息
+   * @param rid 直播间ID
+   */
+  async betard(rid: string) {
+    return await douyu.betard(rid);
+  }
 }

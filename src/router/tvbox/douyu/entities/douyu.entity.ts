@@ -44,4 +44,16 @@ export class Douyu extends Utils {
 
     return data;
   }
+
+  async betard(rid: string) {
+    const url = `https://www.douyu.com/betard/${rid}`;
+
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: this.Headers,
+    });
+    const data = await response.json();
+
+    return data;
+  }
 }
