@@ -15,4 +15,16 @@ export class Douyu extends Utils {
 
     return JSON.parse(data[1]);
   }
+
+  async directoryMixList(cid2: number, page: number) {
+    const url = `https://www.douyu.com/gapi/rknc/directory/mixListV1/2_${cid2}/${page}`;
+
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: this.Headers,
+    });
+    const data = await response.json();
+
+    return data;
+  }
 }

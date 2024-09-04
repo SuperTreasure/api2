@@ -1,4 +1,4 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateDouyuDto } from './create-douyu.dto';
+import { DirectoryMixListDouyuDto } from './directoryMixList-douyu.dto';
 
-export class UpdateDouyuDto extends PartialType(CreateDouyuDto) {}
+export class UpdateDouyuDto extends PartialType(DirectoryMixListDouyuDto) {}
