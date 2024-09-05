@@ -9,6 +9,7 @@ import {
 import { DouyuService } from './douyu.service';
 import { DirectoryMixListDouyuDto } from './dto/directoryMixList-douyu.dto';
 import { SearchDouyuDto } from './dto/search-douyu.dto';
+import { StreamUrlDouyuDto } from './dto/streamUrl-douyu.dto';
 
 @Controller({
   path: 'tvbox/douyu',
@@ -56,5 +57,16 @@ export class DouyuController {
   @Get('betard/:rid')
   async betard(@Param('rid') rid: string) {
     return await this.douyuService.betard(rid);
+  }
+
+  @Get('streamUrl/:rid')
+  async streamUrl(
+    @Param('rid') rid: string,
+    @Query() query: StreamUrlDouyuDto,
+  ) {
+    const cdn = query.cdn || '';
+    const rate = query.rate || -1;
+
+    return await this.douyuService.streamUrl(rid, cdn, rate);
   }
 }

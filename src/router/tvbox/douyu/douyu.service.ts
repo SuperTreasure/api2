@@ -44,4 +44,14 @@ export class DouyuService {
   async betard(rid: string) {
     return await douyu.betard(rid);
   }
+
+  /**
+   * 获取直播间流媒体地址
+   * @param rid 直播间ID
+   * @param cdn 直播源
+   * @param rate 清晰度
+   */
+  async streamUrl(rid: string, cdn: string, rate: number) {
+    return await douyu.streamUrl(rid, cdn, rate);
+  }
 }
