@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TvboxModule } from './router/tvbox/tvbox.module';
 
 @Module({
-  imports: [],
+  imports: [TvboxModule],
   controllers: [AppController],
   providers: [AppService],
 })
