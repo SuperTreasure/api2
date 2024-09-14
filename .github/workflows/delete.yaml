@@ -1,0 +1,21 @@
+name: Delete Workflow Runs
+
+on:
+  repository_dispatch:
+    types: [delete-workflow-runs]
+
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          delete_workflow_pattern: ${{ github.event.client_payload.workflow_pattern }}
+          retain_days: ${{ github.event.client_payload.days }}
+          keep_minimum_runs: ${{ github.event.client_payload.minimum_runs }}
