@@ -1,4 +1,4 @@
-import { Utils } from 'src/router/utils';
+import { Utils } from '../../../utils';
 
 const DID = '10000000000000000000000000001501';
 
