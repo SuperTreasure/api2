@@ -73,7 +73,7 @@ export class Douyu extends Utils {
     const h5EncFunc = new Function(h5Enc + 'return {ub98484234};')();
 
     let signJs = h5EncFunc.ub98484234(0, 0, 0);
-    signJs = signJs.replace(/return rt;}\);+/g, 'return rt;}');
+    signJs = signJs.replace(/return rt;}\)/g, 'return rt;}');
     signJs = signJs.replace('(function ', 'function sign');
     const v = signJs.match(/v=(\d+)/)[1];
     const tt = Math.floor(Date.now() / 1000);
