@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api:v0.2.0_beta.240926235244
+    container_name: api
+    ports:
+      - '5253:5253'
+    environment:
+      - NODE_ENV=production
+    restart: always
